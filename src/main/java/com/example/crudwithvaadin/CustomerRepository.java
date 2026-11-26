@@ -7,4 +7,6 @@ import java.util.List;
 public interface CustomerRepository extends JpaRepository<Customer, Long> {
 
 	List<Customer> findByLastNameStartsWithIgnoreCase(String lastName);
+
+	List<Customer> findByFirstNameContainingIgnoreCaseOrLastNameContainingIgnoreCase(String firstName, String lastName);
 }
